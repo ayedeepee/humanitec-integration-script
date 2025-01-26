@@ -52,6 +52,7 @@ class PortClient:
         port_headers = (
             self.port_headers if self.port_headers else await self.get_port_headers()
         )
+        logger.info(entity_object)
         response = await self.send_api_request(
             "POST", endpoint, headers=port_headers, json=entity_object
         )
